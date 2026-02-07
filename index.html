@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeweljunkie - Anti-Tarnish Daily Wear Jewelry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #fafafa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4c1 100%); /* Fallback */
+            background-image: url('https://files.catbox.moe/w606xm.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 300px;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Dark overlay to make text more readable on image */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        header h1, header .tagline {
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: white;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #5a5a5a;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about-section {
+            background: white;
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .about-section h2 {
+            text-align: center;
+            color: #2c2c2c;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: #555;
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.9;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #e0e0e0;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem 2.5rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .contact-item:hover {
+            background: #d4af37;
+            transform: scale(1.05);
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #2c2c2c;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+        }
+
+        .cta-button:hover {
+            background: #f4e4c1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212,175,55,0.4);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .navbar {
+            background: #2c2c2c;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .nav-link {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            background: rgba(212,175,55,0.1);
+            color: #d4af37;
+        }
+
+        .nav-link.active {
+            color: #d4af37;
+            border-bottom-color: #d4af37;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .products-section {
+            padding: 3rem 0;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .products-header h2 {
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .products-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f4e4c1 0%, #d4af37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #2c2c2c;
+            color: #d4af37;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.6rem;
+            color: #2c2c2c;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .product-info p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .product-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .feature-tag {
+            background: #f0f0f0;
+            color: #555;
+            padding: 0.4rem 0.9rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .feature-tag.gold {
+            background: #d4af37;
+            color: white;
+        }
+
+        .view-more-btn {
+            background: #d4af37;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .view-more-btn:hover {
+            background: #2c2c2c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4c1 100%);
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            margin: 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #2c2c2c;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #d4af37;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+
+        .modal-section h3 {
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .modal-section p, .modal-section ul {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .modal-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-section ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .modal-section ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+        }
+
+        .price-range {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .price-range .price {
+            font-size: 2rem;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #f4e4c1 0%, #d4af37 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .view-more-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: #2c2c2c;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 2px solid #2c2c2c;
+        }
+
+        .view-more-btn:hover {
+            background: #d4af37;
+            border-color: #d4af37;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .nav-link {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✨ JEWELJUNKIE ✨</h1>
+        <p class="tagline">Where Elegance Meets Everyday Luxury</p>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-link active" onclick="showSection('home')">Home</a>
+            <a href="#products" class="nav-link" onclick="showSection('products')">Our Products</a>
+            <a href="#contact" class="nav-link" onclick="showSection('contact')">Contact</a>
+        </div>
+    </nav>
+
+    <div id="home" class="section active">
+        <div class="container">
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Anti-Tarnish</h3>
+                    <p>Our jewelry is crafted with premium anti-tarnish materials, ensuring your pieces stay brilliant and beautiful for years to come.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Daily Wear</h3>
+                    <p>Designed for your everyday life, our jewelry combines comfort with style, perfect for any occasion from morning to night.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Waterproof</h3>
+                    <p>Swim, shower, or splash without worry. Our waterproof jewelry is built to withstand your active lifestyle while maintaining its shine.</p>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>About Our Jewelry</h2>
+                <p>
+                    At Jeweljunkie, we believe that beautiful jewelry shouldn't be reserved for special occasions. 
+                    Our collection is thoughtfully designed for the modern woman who wants to look effortlessly elegant every single day.
+                </p>
+                <p>
+                    Each piece is crafted with <span class="highlight">anti-tarnish</span>, <span class="highlight">waterproof</span> materials 
+                    that stand up to real life—whether you're running errands, hitting the gym, or enjoying a night out.
+                </p>
+                <p>
+                    Say goodbye to taking off your jewelry before every shower or swim. With Jeweljunkie, 
+                    you can wear your favorite pieces 24/7 and watch them sparkle just as brightly as day one.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="products" class="section">
+        <div class="container products-section">
+            <div class="products-header">
+                <h2>Our Collection</h2>
+                <p>Discover our range of anti-tarnish, waterproof jewelry designed for everyday luxury</p>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        💍
+                        <span class="product-badge">BESTSELLER</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Rings</h3>
+                        <p>Elegant rings that never leave your finger. From minimalist bands to statement pieces, each ring is designed to complement your daily style.</p>
+                        <div class="product-features">
+                            <span class="feature-tag gold">Waterproof</span>
+                            <span class="feature-tag">Anti-Tarnish</span>
+                            <span class="feature-tag">Adjustable</span>
+                        </div>
+                        <button class="view-more-btn" onclick="openModal('rings')">View More Details</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        📿
+                    </div>
+                    <div class="product-info">
+                        <h3>Necklaces</h3>
+                        <p>Delicate chains and bold pendants that layer beautifully. Perfect for adding a touch of sophistication to any outfit.</p>
+                        <div class="product-features">
+                            <span class="feature-tag gold">Waterproof</span>
+                            <span class="feature-tag">Anti-Tarnish</span>
+                            <span class="feature-tag">Layerable</span>
+                        </div>
+                        <button class="view-more-btn" onclick="openModal('necklaces')">View More Details</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        👂
+                    </div>
+                    <div class="product-info">
+                        <h3>Earrings</h3>
+                        <p>Studs, hoops, and drops that transition seamlessly from day to night. Hypoallergenic and comfortable for all-day wear.</p>
+                        <div class="product-features">
+                            <span class="feature-tag gold">Waterproof</span>
+                            <span class="feature-tag">Anti-Tarnish</span>
+                            <span class="feature-tag">Hypoallergenic</span>
+                        </div>
+                        <button class="view-more-btn" onclick="openModal('earrings')">View More Details</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        ⌚
+                    </div>
+                    <div class="product-info">
+                        <h3>Bracelets</h3>
+                        <p>Stackable bracelets and elegant bangles that add charm to your wrists. Mix and match to create your unique look.</p>
+                        <div class="product-features">
+                            <span class="feature-tag gold">Waterproof</span>
+                            <span class="feature-tag">Anti-Tarnish</span>
+                            <span class="feature-tag">Stackable</span>
+                        </div>
+                        <button class="view-more-btn" onclick="openModal('bracelets')">View More Details</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        🦶
+                    </div>
+                    <div class="product-info">
+                        <h3>Anklets</h3>
+                        <p>Delicate ankle chains perfect for summer days and beach vibes. Durable enough for sand, sun, and water.</p>
+                        <div class="product-features">
+                            <span class="feature-tag gold">Waterproof</span>
+                            <span class="feature-tag">Anti-Tarnish</span>
+                            <span class="feature-tag">Beach-Ready</span>
+                        </div>
+                        <button class="view-more-btn" onclick="openModal('anklets')">View More Details</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        ✨
+                    </div>
+                    <div class="product-info">
+                        <h3>Sets</h3>
+                        <p>Perfectly coordinated jewelry sets for a complete look. Curated combinations that take the guesswork out of styling.</p>
+                        <div class="product-features">
+                            <span class="feature-tag gold">Waterproof</span>
+                            <span class="feature-tag">Anti-Tarnish</span>
+                            <span class="feature-tag">Gift-Ready</span>
+                        </div>
+                        <button class="view-more-btn" onclick="openModal('sets')">View More Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="cta-button" onclick="showSection('contact')">Order Your Favorites</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <div class="contact-section">
+            <h2>Ready to Order?</h2>
+            <p>Get in touch with us for personalized assistance and custom orders</p>
+            
+            <div class="contact-methods">
+                <a href="mailto:contact@jeweljunkie.com" class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>Email Us</span>
+                </a>
+                
+                <a href="https://instagram.com/jeweljunkie" target="_blank" class="contact-item">
+                    <span class="contact-icon">📸</span>
+                    <span>Instagram</span>
+                </a>
+            </div>
+
+            <p style="margin-top: 3rem; font-size: 1rem;">
+                Contact us for more details, custom orders, or any questions about our collection
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jeweljunkiee.in All rights reserved. | Jewelry that Lives Your Life With You</p>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Product Details</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Product details data
+        const productDetails = {
+            rings: {
+                title: '💍 Rings Collection',
+                description: 'Our ring collection features timeless designs that blend everyday elegance with uncompromising durability. Each piece is crafted to be your constant companion.',
+                features: [
+                    'Available in sizes 5-10 with adjustable options',
+                    'Premium stainless steel with 18k gold plating',
+                    'Anti-tarnish coating for lasting brilliance',
+                    'Completely waterproof - wear in shower, pool, or ocean',
+                    'Nickel-free and hypoallergenic',
+                    'Scratch-resistant finish'
+                ],
+                styles: [
+                    'Minimalist Bands - Sleek and understated',
+                    'Stackable Rings - Mix and match for personalized style',
+                    'Statement Rings - Bold designs that make an impact',
+                    'Midi Rings - Delicate above-knuckle pieces',
+                    'Gemstone Rings - Cubic zirconia accents'
+                ],
+                care: 'Simply rinse with water and pat dry. No special care needed!',
+                price: 'Starting from ₹599'
+            },
+            necklaces: {
+                title: '📿 Necklaces Collection',
+                description: 'Elevate any outfit with our versatile necklace collection. From delicate chains to bold pendants, each piece is designed to be your signature look.',
+                features: [
+                    'Chain lengths: 14", 16", 18", 20" available',
+                    'Secure lobster clasp closures',
+                    '100% waterproof - swim and shower friendly',
+                    'Won\'t tarnish or discolor over time',
+                    'Lightweight for all-day comfort',
+                    'Layering-friendly designs'
+                ],
+                styles: [
+                    'Dainty Chains - Perfect for layering',
+                    'Pendant Necklaces - Initial, zodiac, and symbolic designs',
+                    'Chokers - Modern and edgy',
+                    'Lockets - Timeless sentimental pieces',
+                    'Layered Sets - Pre-coordinated multi-strand looks'
+                ],
+                care: 'Wear 24/7 without worry. Water, sweat, and perfume safe.',
+                price: 'Starting from ₹799'
+            },
+            earrings: {
+                title: '👂 Earrings Collection',
+                description: 'Frame your face with our stunning earring collection. Designed for comfort and style, these pieces transition seamlessly from day to night.',
+                features: [
+                    'Hypoallergenic surgical steel posts',
+                    'Suitable for sensitive ears',
+                    'Secure butterfly or screw-back closures',
+                    '100% waterproof construction',
+                    'Lightweight designs for comfort',
+                    'Won\'t cause irritation or green ears'
+                ],
+                styles: [
+                    'Studs - Classic everyday elegance',
+                    'Hoops - Small, medium, and large sizes',
+                    'Drop Earrings - Graceful movement',
+                    'Huggie Hoops - Sleek and modern',
+                    'Ear Cuffs - No piercing required options'
+                ],
+                care: 'Keep them in while you sleep, shower, or swim!',
+                price: 'Starting from ₹499'
+            },
+            bracelets: {
+                title: '⌚ Bracelets Collection',
+                description: 'Adorn your wrists with our beautiful bracelet collection. Stack them high or wear solo - each piece adds a touch of sparkle to your everyday.',
+                features: [
+                    'Adjustable sizing for perfect fit',
+                    'Durable clasp mechanisms',
+                    'Anti-tarnish finish',
+                    'Waterproof for active lifestyles',
+                    'Stackable designs',
+                    'Flexible yet sturdy construction'
+                ],
+                styles: [
+                    'Chain Bracelets - Delicate and feminine',
+                    'Bangles - Solid and sculptural',
+                    'Cuff Bracelets - Bold statement pieces',
+                    'Charm Bracelets - Personalize your story',
+                    'Tennis Bracelets - Continuous sparkle'
+                ],
+                care: 'No removal necessary - designed for constant wear.',
+                price: 'Starting from ₹699'
+            },
+            anklets: {
+                title: '🦶 Anklets Collection',
+                description: 'Perfect for beach days and summer vibes, our anklet collection adds a subtle touch of elegance to your look. Durable enough for all your adventures.',
+                features: [
+                    'Adjustable 9" to 10" length',
+                    'Secure lobster clasp',
+                    'Beach and pool proof',
+                    'Won\'t tarnish in saltwater',
+                    'Sand and surf resistant',
+                    'Comfortable for all-day wear'
+                ],
+                styles: [
+                    'Delicate Chains - Minimalist beach chic',
+                    'Beaded Anklets - Bohemian flair',
+                    'Layered Anklets - Double or triple strand',
+                    'Charm Anklets - Personalized touches',
+                    'Barefoot Sandals - Toe-ring connected designs'
+                ],
+                care: 'Wear to the beach, pool, or shower without worry!',
+                price: 'Starting from ₹499'
+            },
+            sets: {
+                title: '✨ Jewelry Sets',
+                description: 'Take the guesswork out of styling with our perfectly coordinated jewelry sets. Each set is curated to create a complete, polished look.',
+                features: [
+                    'Matching pieces in complementary designs',
+                    'All items are anti-tarnish and waterproof',
+                    'Beautiful gift packaging included',
+                    'Mix and match with other pieces',
+                    'Significant savings vs buying separately',
+                    'Ready-to-wear coordinated style'
+                ],
+                styles: [
+                    'Necklace + Earring Sets - Classic combination',
+                    'Triple Sets - Necklace, earrings, bracelet',
+                    'Bridal Sets - Elegant for special occasions',
+                    'Everyday Sets - Simple and versatile',
+                    'Layering Sets - Multiple coordinated pieces'
+                ],
+                care: 'All pieces designed for 24/7 wear - no maintenance required.',
+                price: 'Starting from ₹1,499'
+            }
+        };
+
+        function openModal(productType) {
+            const modal = document.getElementById('productModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            const product = productDetails[productType];
+            
+            modalTitle.textContent = product.title;
+            
+            modalBody.innerHTML = `
+                <div class="modal-section">
+                    <p>${product.description}</p>
+                </div>
+
+                <div class="price-range">
+                    <div class="price">${product.price}</div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul>
+                        ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Available Styles</h3>
+                    <ul>
+                        ${product.styles.map(style => `<li>${style}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Care Instructions</h3>
+                    <p>${product.care}</p>
+                </div>
+
+                <div class="modal-section" style="text-align: center;">
+                    <a href="#contact" class="cta-button" onclick="closeModal(); showSection('contact');">
+                        Order Now - Contact Us
+                    </a>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
